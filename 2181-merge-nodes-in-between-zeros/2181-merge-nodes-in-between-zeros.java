@@ -11,7 +11,7 @@
 class Solution {
     public ListNode mergeNodes(ListNode head) {
         
-        ListNode res = new ListNode(0);
+        ListNode res = head;
         ListNode temp = res;
         int curr=0;
         while(head!=null){
