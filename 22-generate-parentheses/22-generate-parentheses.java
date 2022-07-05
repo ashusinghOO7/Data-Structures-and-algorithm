@@ -18,6 +18,7 @@ class Solution {
         }
     }
     public List<String> generateParenthesis(int n) {
+        al = new ArrayList<>();
         solver(n,n,"");
         return al;
     }
