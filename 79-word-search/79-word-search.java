@@ -20,9 +20,10 @@ class Solution {
     }
     
     public boolean exist(char[][] board, String word) {
+        int vis[][] = new int[board.length][board[0].length];
         for(int i=0;i<board.length;i++){
             for(int j=0;j<board[0].length;j++){
-                int vis[][] = new int[board.length][board[0].length];
+                //int vis[][] = new int[board.length][board[0].length];
                 if(board[i][j]==word.charAt(0) && helper(board,i,j,word,0,vis)){
                     return true;
                 }
