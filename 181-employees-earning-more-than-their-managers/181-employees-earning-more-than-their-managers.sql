@@ -4,6 +4,6 @@ where
 a.managerid = b.id and
 a.salary>b.salary  */
 select e.Name as Employee
-from Employee e join Employee m
-on(e.ManagerId=m.Id)
-where e.salary>m.salary;
+from Employee e,Employee m
+where (e.ManagerId=m.Id)
+and e.salary>m.salary;
