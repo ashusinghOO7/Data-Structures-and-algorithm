@@ -1,20 +1,19 @@
 class Solution {
     public int lengthOfLIS(int[] nums) {
-        int n = nums.length;
-        int[] f = new int[n];
-        Arrays.fill(f, 1);
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < i; j++){
-                if(nums[j] < nums[i]){
-                    f[i] = Math.max(f[i], f[j]+1);
-                }
-            }
+        int[] tails = new int[nums.length];
+    int size = 0;
+    for (int x : nums) {
+        int i = 0, j = size;
+        while (i != j) {
+            int m = (i + j) / 2;
+            if (tails[m] < x)
+                i = m + 1;
+            else
+                j = m;
         }
-        int res = 0;
-        for(int i = 0; i < n; i++){
-            res = Math.max(res, f[i]);
-        }
-        
-        return res;
+        tails[i] = x;
+        if (i == size) ++size;
+    }
+    return size;
     }
 }
